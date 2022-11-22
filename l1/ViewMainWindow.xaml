@@ -1,0 +1,26 @@
+﻿<Window x:Class="l1.ViewMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:l1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="LightGray"
+        >
+    <Window.DataContext>
+        <local:ViewModelMain></local:ViewModelMain>
+    </Window.DataContext>
+    
+    <Grid>
+        <Border Padding="10" Background="#B1A296" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+            <TextBox AcceptsReturn="True" Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}" MinLines="10" MaxLines="20" VerticalScrollBarVisibility="Auto" MinWidth="600" MaxWidth="800" TextWrapping="Wrap"></TextBox>
+                <StackPanel>
+                    <TextBlock FontSize="16">Результат:</TextBlock>
+                    <TextBlock Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                </StackPanel>    
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
